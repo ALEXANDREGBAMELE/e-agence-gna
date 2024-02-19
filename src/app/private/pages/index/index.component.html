@@ -1,0 +1,22 @@
+@if(loading){
+<app-transition-spiner />
+}@else{
+<div class="container-fluid">
+    <div class="header">
+        <app-header />
+    </div>
+    <div class="flex">
+        <div class="side-bar">
+            <app-side-nav />
+        </div>
+        <div class="content">
+            <div class="p-5">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<!--<app-header></app-header>
+<app-nav-side></app-nav-side>-->

@@ -1,0 +1,19 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(4, 10, 16, 0.2);
+  }
+  
+  .spinner {
+    margin-right: 0.5px; /* Ajoute de l'espace entre les spinners */
+    animation: spin 1s linear infinite; /* Ajoute une animation de rotation */
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

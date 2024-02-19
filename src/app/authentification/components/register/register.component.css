@@ -1,0 +1,133 @@
+.container-fluid{
+    height: 100vh;
+    background-color: #ffffff !important;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100% !important;
+    position: relative;
+}
+
+.form-container:not(#form-title){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    padding: 0px;
+    /*background-color: #f7f7f7;*/
+    background-color: rgba(247, 247, 247, 0.8);
+    width: 610px !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    z-index: 1;
+    
+}
+#form-title{
+    font-size: 26px;
+    font-weight: bold;
+    width: 490px;
+}
+.bouton-submit{
+    background-color: #F6993F;
+    color: #fff;
+    border: none;
+   /* padding: 10px 20px;*/
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    height: 60px;
+    width: 490px;
+}
+
+.remenber-link{
+    width: 490px !important;
+    justify-content: space-between;
+}
+
+input:not(#remenber){
+    
+    height: 50px;
+    width: 490px !important;
+    border-radius: 10px;
+    border: 0.5px solid #C4C4C4;
+    padding: 0px 20px;
+    font-size: 20px;
+    background-color: #fff !important;
+}
+.label{
+    font-size: 14px !important;
+    color: black;
+}
+
+.password-container {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 70%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .back-circle-style{
+    border: 50px rgb(240, 244, 244) solid;
+    border-radius: 100%;
+    height: 284px;
+    width: 284px;
+    position: absolute;
+    top: 11%;
+    left: 21%;
+    z-index: 0;
+  }
+
+  .hr{
+    border: solid 1px #C4C4C4;
+    width: 490px;
+    background-color: #C4C4C4;
+    margin: 8% 0px 8% 0px;
+  }
+  .title-style{
+    border-bottom: solid #2960a3 2.2px;
+    padding-bottom: 3%;
+}
+/* responsivité */
+@media (max-width: 768px) {
+    .container{
+        height: 100%;
+    }
+    .form-container:not(#form-title){
+        height: 100%;
+        width: 100% !important;
+        border-radius: 0px;
+        padding: 15px;
+    }
+    #form-title{
+        width: 100%;
+    }
+    .bouton-submit{
+        width: 100% !important;
+        height: 45px;
+    }
+    .remenber-link{
+        width: 100% !important;
+    }
+    input:not(#remenber){
+        width: 100% !important;
+        height: 40px;
+    }
+    .back-circle-style{
+        display: none;
+      }
+    .hr{
+        width: 98%;
+    }
+
+}

@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="container m-auto items-center">
+    <div class="back-circle-style"></div>
+    <div class="logo mb-12"><img src="../../../../assets/images/Groupe 11354.svg" alt="logo GNA"></div>
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="form-container">
+      <div id="form-title" class="mb-8">
+        <span class="title-style">Bienve</span>nue ,
+      </div>
+      <div class="formGroup mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identifiant <span
+            class="text-red-500">*</span></label>
+        <input formControlName="email" type="email" id="email"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          placeholder="mail; no telephone; no abonné" required>
+        <div
+          *ngIf="loginForm.get('email')!.invalid && (loginForm.get('email')!.dirty || loginForm.get('email')!.touched)"
+          class="text-sm text-red-500">Veuillez saisir une adresse email valide</div>
+      </div>
+      <div class="formGroup mb-5">
+        <div class=" password-container">
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mot de passe <span
+              class="text-red-500">*</span></label>
+          <input formControlName="password" [type]="!showPassword ? 'password' : 'text'" id="password"
+            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white  dark:focus:border-blue-500 dark:shadow-sm-light"
+            required>
+
+          <div class="toggle-password flex">
+            @if (showPassword) {
+            <svg (click)="togglePasswordVisibility()" class="h-8 w-8 text-gray-900" width="24" height="24"
+              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <circle cx="12" cy="12" r="2" />
+              <path d="M2 12l1.5 2a11 11 0 0 0 17 0l1.5 -2" />
+              <path d="M2 12l1.5 -2a11 11 0 0 1 17 0l1.5 2" />
+            </svg>
+            } @else {
+            <svg (click)="togglePasswordVisibility()" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+            </svg>
+            }
+          </div>
+        </div>
+        <div
+          *ngIf="loginForm.get('password')!.invalid && (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)"
+          class="text-sm text-red-500">Veuillez saisir un mot de passe valide</div>
+      </div>
+
+      <div class="remenber-link flex items-start mb-5 content-between">
+        <div class="flex items-center h-5">
+          <input id="remenber" type="checkbox" value=""
+            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+            required>
+          <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Se souvenir de
+            moi</label>
+        </div>
+        <div><a routerLink="/auth/forget" class="text-blue-600">Mot de passe oublié ?</a></div>
+      </div>
+      <button type="submit"
+        class="bouton-submit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Connexion</button>
+      <div class="hr"></div>
+      <div class="flex items-center justify-center mt-5">
+        <div class="text-sm font-medium text-gray-900 dark:text-gray-300">Vous n'avez pas de compte ?</div>
+        <a routerLink="/auth/register" class="ms-2 text-sm font-medium text-orange-700 dark:text-blue-600">Inscrivez vous </a>
+      </div>
+    </form>
+  </div>
+</div>
