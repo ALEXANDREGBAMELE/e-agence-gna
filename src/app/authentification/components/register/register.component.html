@@ -4,33 +4,48 @@
     <div class="logo mb-8"><img src="../../../../assets/images/Groupe 11354.svg" alt="logo GNA"></div>
     <!--stepper progress bar-->
 
-    <div class="progress-steps mb-7 md:w-72 ">
-      <ol class="flex items-center md:w-64  ">
+    <div class="progress-steps mb-7 md:w-40 ">
+      <ol class="flex items-center md:w-64 justify-center ">
+        @if (step===1)
+        {
         <li
-          class="flex w-full items-center  dark:text-blue-500 after:content-[''] after:w-full after:h-1 after:border-b after:border-orange-400 after:border-4 after:inline-block dark:after:border-blue-800">
-          <span
-            class="flex items-center justify-center w-5 h-5 bg-orange-400 rounded-full lg:h-6 lg:w-6 dark:bg-blue-800 shrink-0">
-            <svg class="w-2.5 h-2.5 text-white lg:w-3 lg:h-3 dark:text-orange-300" aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5.917 5.724 10.5 15 1.5" />
-            </svg>
+          class="flex w-full items-center  dark:text-blue-500 after:content-[''] after:w-full after:h-0 after:border-b after:border-2 after:inline-block dark:after:border-blue-800">
+          <span class="flex items-center justify-center w-6 h-6 border-2 border-white rounded-full lg:h-8 lg:w-8">
+            <span
+              class="flex items-center justify-center w-5 h-5 border-2 border-orange-400 rounded-full lg:h-6 lg:w-6 dark:bg-blue-800 shrink-0">
+            </span>
           </span>
-
-         @if (false) {
-          <span
-          class="flex items-center justify-center w-5 h-5 border border-orange-400 rounded-full lg:h-6 lg:w-6 dark:bg-blue-800 shrink-0">
-          
-        </span>
-         }
-
         </li>
         <li class="flex items-center w-full">
-          <span
-            class="flex items-center justify-center w-5 h-5 bg-gray-100 rounded-full lg:h-6 lg:w-6 dark:bg-gray-700 shrink-0">
-
+          <span class="flex items-center justify-center w-6 h-6 border-2 border-white rounded-full lg:h-8 lg:w-8">
+            <span
+              class="flex items-center justify-center w-5 h-5 bg-gray-100 rounded-full lg:h-6 lg:w-6 dark:bg-gray-700 shrink-0">
+            </span>
           </span>
         </li>
+        }@else if (step===2)
+        {
+        <li
+          class="flex w-full items-center  dark:text-blue-500 after:content-[''] after:w-full after:h-0 after:border-b after:border-orange-400 after:border-2 after:inline-block dark:after:border-blue-800">
+          <span class="flex items-center justify-center w-6 h-6 border-2 border-white rounded-full lg:h-8 lg:w-8">
+            <span
+              class="flex items-center justify-center w-5 h-5 bg-orange-400 rounded-full lg:h-6 lg:w-6 dark:bg-blue-800 shrink-0">
+              <svg class="w-2.5 h-2.5 text-white lg:w-3 lg:h-3 dark:text-blue-300" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 5.917 5.724 10.5 15 1.5" />
+              </svg>
+            </span>
+          </span>
+        </li>
+        <li class="flex items-center w-full">
+          <span class="flex items-center justify-center w-6 h-6 border-2 border-white rounded-full lg:h-8 lg:w-8">
+            <span
+              class="flex items-center justify-center w-5 h-5 border-2 border-orange-400 rounded-full lg:h-6 lg:w-6 dark:bg-gray-700 shrink-0">
+            </span>
+          </span>
+        </li>
+        }
       </ol>
     </div>
 

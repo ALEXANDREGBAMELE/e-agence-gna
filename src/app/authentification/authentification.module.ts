@@ -7,12 +7,14 @@ import { PasswordForgetComponent } from './components/password-forget/password-f
 import { SharedModule } from '../shared/shared.module';
 import { RegisterComponent } from './components/register/register.component';
 import { NgOtpInputModule } from  'ng-otp-input';
+import { PasswordUpdateSuccessfulyComponent } from './components/password-forget/password-update-successfuly/password-update-successfuly.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     PasswordForgetComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordUpdateSuccessfulyComponent
   ],
   imports: [
     CommonModule,

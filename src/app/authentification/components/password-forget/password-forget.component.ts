@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavigateService } from 'src/app/core/services/navigate.service';
 
 @Component({
   selector: 'app-password-forget',
@@ -11,14 +12,16 @@ export class PasswordForgetComponent implements OnInit{
   showPassword: boolean = false;
   loading: boolean = true;
   
-  constructor(private fb: FormBuilder) {}
-
+  constructor(private fb: FormBuilder, private navigateService: NavigateService) {}
   ngOnInit(): void {
+    this.step = 1;
+
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
+   
 
 submitForm() {
   console.log('Form submitted', this.loginForm.value);
@@ -30,12 +33,10 @@ togglePasswordVisibility() {
 }
 
 step: number = 1;
-currentStep: boolean = false;
 
 next(){
   if(this.step<3){
         this.step++
-        this.currentStep = true;
   }
 }
 
@@ -44,7 +45,13 @@ previous(){
         this.step--
   }
 }
+//gestion de l'otp
 onOtpChange(otp: string) {
   console.log(otp);
 }
+//Navigation vers la page de succès
+goToSuccessPasswordUpdate() {
+  this.navigateService.goToSuccessPasswordUpdate();
+}
+  
 }

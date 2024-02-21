@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class NavigateService {
+  
 
   constructor( private route: Router ) { }
 
@@ -15,5 +16,11 @@ export class NavigateService {
     this.route.navigate(['index/dashboard']);
   }
 
+  public goToSuccessPasswordUpdate() {
+    this.route.navigate(['auth/success-password-update']);
+  }
 
+  public goToLogin() {
+    this.route.navigate(['auth/login']);
+  }
 }
