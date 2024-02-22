@@ -8,6 +8,7 @@ import { NavigateService } from 'src/app/core/services/navigate.service';
   styleUrl: './password-forget.component.css'
 })
 export class PasswordForgetComponent implements OnInit{
+
   loginForm!: FormGroup;
   showPassword: boolean = false;
   loading: boolean = true;
@@ -53,5 +54,9 @@ onOtpChange(otp: string) {
 goToSuccessPasswordUpdate() {
   this.navigateService.goToSuccessPasswordUpdate();
 }
+
+handleButtonClick() {
+  alert('Button clicked');
+  }
   
 }

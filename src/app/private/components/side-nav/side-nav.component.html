@@ -1,8 +1,19 @@
-<aside id="logo-sidebar"
+<aside id="logo-sidebar" [ngClass]="{'hidden': !isVisible}" id="logo-sidebar"
    class="fixed top-0 left-0 z-40 w-64 h-screen pt-24 transition-transform -translate-x-full bg-color border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
    aria-label="Sidebar">
    <div class="h-full px-0 pb-4 overflow-y-auto bg-color dark:bg-gray-800">
-      <ul class="space-y-2 font-medium">
+      @for (item of navbarItems; track $index) {
+         <ul class="space-y-2 font-medium">
+             <li [routerLinkActive]="['bg-white', 'border-r-4', 'border-orange-400', 'text-gray-900']" [class.hover:bg-black]="$index !== 0" [class.hover:bg-opacity-25]="$index !== 0" class="li-hover-bg-color active:border-r-4 active:border-orange-400 active:bg-white px-8 py-2 focus:bg-white">
+                 <a [routerLink]="item.url" class="flex items-center p-2 text-gray-400 active:text-black rounded-lg dark:text-white dark:hover:bg-gray-700 group">
+                     <img src="{{item.icon}}" alt="">
+                     <span class="ms-3">{{item.label}}</span>
+                 </a>
+             </li>
+         </ul>
+     }
+     
+      <!--<ul class="space-y-2 font-medium">
          <li routerLinkActive="bg-white border-r-4 border-orange-400 text-gray-900"
             class="hover:bg-black hover:bg-opacity-25   li-hover-bg-color active:border-r-4 active:border-orange-400 active:bg-white px-8 py-2 focus:bg-white  ">
             <a routerLink="/index/dashboard"
@@ -133,6 +144,6 @@
                <span class="ms-3">Informations</span>
             </a>
          </li>
-      </ul>
+      </ul>-->
    </div>
 </aside>

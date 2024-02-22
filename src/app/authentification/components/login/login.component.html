@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid h-screen w-full flex justify-center">
   <div class="container m-auto items-center">
     <div class="back-circle-style"></div>
     <div class="logo mb-12"><img src="../../../../assets/images/Groupe 11354.svg" alt="logo GNA"></div>
@@ -48,7 +48,7 @@
           class="text-sm text-red-500">Veuillez saisir un mot de passe valide</div>
       </div>
 
-      <div class="remenber-link flex items-start mb-5 content-between">
+      <div class="justify-between bg-black w-full px-16 px-5 flex items-start mb-5 ">
         <div class="flex items-center h-5">
           <input id="remenber" type="checkbox" value=""
             class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
@@ -58,12 +58,15 @@
         </div>
         <div><a routerLink="/auth/forget" class="text-blue-600">Mot de passe oublié ?</a></div>
       </div>
-      <button type="submit"
-        class="bouton-submit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Connexion</button>
+      <div class=" w-full lg:px-16 px-5 ">
+        <app-customer-button buttonText="Connexion" buttonClass="custom-button"
+          (buttonClick)="submitForm()"></app-customer-button>
+      </div>
       <div class="hr"></div>
       <div class="flex items-center justify-center mt-5">
         <div class="text-sm font-medium text-gray-900 dark:text-gray-300">Vous n'avez pas de compte ?</div>
-        <a routerLink="/auth/register" class="ms-2 text-sm font-medium text-orange-700 dark:text-blue-600">Inscrivez vous </a>
+        <a routerLink="/auth/register" class="ms-2 text-sm font-medium text-orange-700 dark:text-blue-600">Inscrivez
+          vous </a>
       </div>
     </form>
   </div>
